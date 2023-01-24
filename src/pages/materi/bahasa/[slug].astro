@@ -1,0 +1,25 @@
+---
+import Presentation from "../../../layouts/Presentation.astro";
+
+export async function getStaticPaths() {
+  const materials = await Astro.glob("../../../../materi/bahasa/*.md");
+
+  return materials.map((material) => {
+    const splittedFile = material.file.split("/");
+    const slug = splittedFile[splittedFile.length - 1].replace(".md", "");
+
+    return {
+      params: { slug },
+      props: {
+        title: material.frontmatter.title,
+        description: material.frontmatter.description,
+        content: material.rawContent(),
+      },
+    };
+  });
+}
+
+const { title, description, content } = Astro.props;
+---
+
+<Presentation title={title} description={description} content={content} />

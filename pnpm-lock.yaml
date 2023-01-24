@@ -1,10 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/reveal.js': ^4.4.0
   astro: ^1.9.0
+  reveal.js: ^4.4.0
 
 dependencies:
   astro: 1.9.2
+  reveal.js: 4.4.0
+
+devDependencies:
+  '@types/reveal.js': 4.4.0
 
 packages:
 
@@ -566,6 +572,10 @@ packages:
   /@types/resolve/1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: false
+
+  /@types/reveal.js/4.4.0:
+    resolution: {integrity: sha512-cdReHj44whG5JHLOziWgv5K36EjfM+POpM1WZl7uOUR8IPYM7ufyqx63RUtJD8WJjUnIuVyByWozsy4lZyq7XA==}
+    dev: true
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
@@ -2725,6 +2735,11 @@ packages:
   /reusify/1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+    dev: false
+
+  /reveal.js/4.4.0:
+    resolution: {integrity: sha512-jIV6C9V2NEUjGzU8L6dUFGpk1KJmq7/EzP2fOW67ggc2c0Cp/PdprWxZ9Qgp46F0T2ZWDCjQ1p3Ytzy5jA6a2w==}
+    engines: {node: '>=10.0.0'}
     dev: false
 
   /roarr/2.15.4:

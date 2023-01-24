@@ -1,0 +1,49 @@
+---
+import "reveal.js/dist/reveal.css";
+import "reveal.js/dist/theme/black.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  content: string;
+}
+
+const { title, description, content } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides" set:html={content} />
+    </div>
+
+    <script type="module" hoist>
+      import Reveal from "reveal.js";
+      import RevealZoom from "reveal.js/plugin/zoom/zoom.esm.js";
+      import RevealNotes from "reveal.js/plugin/notes/notes.esm.js";
+      import RevealSearch from "reveal.js/plugin/search/search.esm.js";
+      import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
+      import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm.js";
+
+      Reveal.initialize({
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+    </script>
+  </body>
+</html>
