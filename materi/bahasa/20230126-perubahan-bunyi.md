@@ -51,7 +51,7 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
 
   <h4 style="text-transform: none; font-weight: normal;">Coba cek buku catetan kalian, ada yang kurang gak?</h4>
 
-  <p class="fragment" style="margin-top: 50px; font-size: 32px;">Ada, tapi masih sampe huruf の。</p>
+  <p class="fragment" style="margin-top: 50px; font-size: 32px;">Ada, hiragana baru sampe huruf の。</p>
 
 </section>
 
@@ -145,12 +145,12 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
 </section>
 
 <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px">はんだくおん</h2>
+    <h2 style="margin-bottom: 20px; color: #219ebc; letter-spacing: 25px">はんだくおん</h2>
 
     <ul>
       <li class="fragment">Memiliki tambahan tanda baca bulatan di kanan atas 「゜」</li>
       <li class="fragment">Nama lainnya itu <i>maru</i> atau <i>handakuten</i></li>
-      <li class="fragment">Dibaca setengah menebal darihuruf dasarnya</li>
+      <li class="fragment">Dibaca setengah menebal dari huruf dasarnya</li>
       <li class="fragment">Terdapat hanya 5 huruf hiragana handakten</li>
     </ul>
 
@@ -162,21 +162,44 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
 
   <table style="font-size: 50px">
     <tr>
-    <th> </th>
-    <th>a</th>
-    <th>i</th>
-    <th>u</th>
-    <th>e</th>
-    <th>o</th>
-  </tr>
-  <tr>
-    <th>p</th>
-    <td>ぱ</td>
-    <td>ぴ</td>
-    <td>ぷ</td>
-    <td>ぺ</td>
-    <td>ぽ</td>
-  </tr>
+      <th> </th>
+      <th>a</th>
+      <th>i</th>
+      <th>u</th>
+      <th>e</th>
+      <th>o</th>
+    </tr>
+    <tr>
+      <th>p</th>
+      <td>ぱ</td>
+      <td>ぴ</td>
+      <td>ぷ</td>
+      <td>ぺ</td>
+      <td>ぽ</td>
+    </tr>
   </table>
 
+</section>
+
+
+<section>
+  <h3 style="text-transform: none">Sebelum Beres...</h3>
+
+  <div class="fragment r-hstack">
+      <p style="width: 38%; margin-right: 20px">Latihan baca, contoh di samping. <i>Agak laen emang...</i></p>
+
+    <image width="370" src="/static/materi/bahasa/20230126-perubahan-bunyi/screenshot-twitter.jpg" />
+  </div>
+</section>
+
+
+<section data-transition="convex">
+  <h1>
+    <span style="color: #22577a">あ</span>
+    <span style="color: #38a3a5">り</span>
+    <span style="color: #57cc99">が</span>
+    <span style="color: #80ed99">と</span>
+    <span style="color: #c7f9cc">う</span>
+    <span>!</span>
+  </h1>
 </section>
