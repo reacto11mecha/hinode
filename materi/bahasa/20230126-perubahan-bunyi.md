@@ -36,3 +36,33 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
 <section data-transition="concave" data-transition-speed="slow">
   <h1 style="text-transform: none">Perubahan Bunyi!</h1>
 </section>
+
+<section>
+  <h2 style="text-transform: none">Hal Yang Akan Dipelajari</h2>
+  
+  <ul>
+    <li class="fragment">濁音 / だくおん   =>   「゛」</li>
+    <li class="fragment">半濁音 / はんだくおん   =>   「゜」</li>
+  </ul>
+</section>
+
+<section data-transition="fade">
+  <h2 style="text-transform: none">Sebelum masuk...</h2>
+
+  <h4 style="text-transform: none; font-weight: normal;">Coba cek buku catetan kalian, ada yang kurang gak?</h4>
+
+  <p class="fragment" style="margin-top: 50px; font-size: 32px;">Ada, masih sampe huruf の。</p>
+
+</section>
+
+<section data-transition="none"></section>
+
+<section data-transition="fade">
+  <image src="/static/materi/bahasa/20230126-perubahan-bunyi/Hiragana.png" />
+</section>
+
+<section>
+  <h1 style="text-transform: none; font-weight: normal;">Udah Beres?</h1>
+
+  <p class="fragment up">Lanjut!</p>
+</section>
