@@ -151,7 +151,7 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
       <li class="fragment">Memiliki tambahan tanda baca bulatan di kanan atas 「゜」</li>
       <li class="fragment">Nama lainnya itu <i>maru</i> atau <i>handakuten</i></li>
       <li class="fragment">Dibaca setengah menebal dari huruf dasarnya</li>
-      <li class="fragment">Terdapat hanya 5 huruf hiragana handakten</li>
+      <li class="fragment">Terdapat hanya 5 huruf hiragana handakuten</li>
     </ul>
 
     <p class="fragment" style="margin-top: 25px"><i>Apa saja hurufnya...</i></p>
