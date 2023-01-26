@@ -181,7 +181,6 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
 
 </section>
 
-
 <section>
   <h3 style="text-transform: none">Sebelum Beres...</h3>
 
@@ -189,9 +188,9 @@ description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
       <p style="width: 38%; margin-right: 20px">Latihan baca, contoh di samping. <i>Agak laen emang...</i></p>
 
     <image width="370" src="/static/materi/bahasa/20230126-perubahan-bunyi/screenshot-twitter.jpg" />
+
   </div>
 </section>
-
 
 <section data-transition="convex">
   <h1>

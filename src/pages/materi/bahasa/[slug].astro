@@ -13,13 +13,19 @@ export async function getStaticPaths() {
       props: {
         title: material.frontmatter.title,
         description: material.frontmatter.description,
+        theme: material.frontmatter.theme,
         content: material.rawContent(),
       },
     };
   });
 }
 
-const { title, description, content } = Astro.props;
+const { theme, title, description, content } = Astro.props;
 ---
 
-<Presentation title={title} description={description} content={content} />
+<Presentation
+  title={title}
+  description={description}
+  content={content}
+  theme={theme}
+/>

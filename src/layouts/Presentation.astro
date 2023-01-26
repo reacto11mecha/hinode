@@ -1,14 +1,40 @@
 ---
 import "reveal.js/dist/reveal.css";
-import "reveal.js/dist/theme/black.css";
+
+import themeBlack from "reveal.js/dist/theme/black.css?raw";
+import themeWhite from "reveal.js/dist/theme/white.css?raw";
+import themeLeague from "reveal.js/dist/theme/league.css?raw";
+import themeBeige from "reveal.js/dist/theme/beige.css?raw";
 
 export interface Props {
   title: string;
   description: string;
   content: string;
+  theme?: "black" | "white" | "league" | "beige";
 }
 
-const { title, description, content } = Astro.props;
+const decideTheme = (theme: Props["theme"]) => {
+  console.log(theme);
+
+  switch (theme) {
+    case "black":
+      return themeBlack;
+
+    case "white":
+      return themeWhite;
+
+    case "league":
+      return themeLeague;
+
+    case "beige":
+      return themeBeige;
+
+    default:
+      return themeBlack;
+  }
+};
+
+const { title, theme, description, content } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -23,6 +49,8 @@ const { title, description, content } = Astro.props;
   </head>
 
   <body>
+    <style is:inline set:html={decideTheme(theme)}></style>
+
     <div class="reveal">
       <div class="slides" set:html={content} />
     </div>
