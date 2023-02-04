@@ -6,8 +6,6 @@ export async function getStaticPaths() {
     const splittedFile = material.file.split("/");
     const slug = splittedFile[splittedFile.length - 1].replace(".md", "");
 
-
-
     return {
       params: { slug },
       props: {
@@ -17,8 +15,7 @@ export async function getStaticPaths() {
   });
 }
 
-
-const { Content } = Astro.props
+const { Content } = Astro.props;
 ---
 
 <Content />

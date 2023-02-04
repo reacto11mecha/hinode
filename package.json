@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prettier": "prettier --plugin-search-dir=. -w src materi"
   },
   "dependencies": {
     "astro": "^2.0.6",
@@ -15,6 +16,8 @@
     "reveal.js": "^4.4.0"
   },
   "devDependencies": {
-    "@types/reveal.js": "^4.4.0"
+    "@types/reveal.js": "^4.4.0",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0"
   }
 }
