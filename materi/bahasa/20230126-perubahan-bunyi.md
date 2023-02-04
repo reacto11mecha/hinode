@@ -1,4 +1,5 @@
 ---
+layout: ../../src/layouts/Presentation/Black.astro
 title: Perubahan Bunyi Hiragana
 description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
 ---

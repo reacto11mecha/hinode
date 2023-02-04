@@ -1,14 +1,14 @@
 ---
+import fs from "fs";
+import matter from "gray-matter";
+
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/black.css";
 
-export interface Props {
-  title: string;
-  description: string;
-  content: string;
-}
+const { title, description, file } = Astro.props.frontmatter;
 
-const { title, description, content } = Astro.props;
+const unparsedFile = fs.readFileSync(file, "utf8");
+const {content} = matter(unparsedFile);
 ---
 
 <!DOCTYPE html>

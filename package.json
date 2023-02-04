@@ -1,7 +1,6 @@
 {
-  "name": "@example/basics",
+  "name": "hinode",
   "type": "module",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.9.0",
+    "astro": "^2.0.6",
+    "gray-matter": "^4.0.3",
     "reveal.js": "^4.4.0"
   },
   "devDependencies": {
