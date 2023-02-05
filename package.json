@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "prettier": "prettier --plugin-search-dir=. -w src materi"
@@ -16,8 +16,10 @@
     "reveal.js": "^4.4.0"
   },
   "devDependencies": {
-    "@types/reveal.js": "^4.4.0",
+    "@types/node": "^18.11.19",
+    "@types/reveal.js": "^4.4.1",
     "prettier": "^2.8.3",
-    "prettier-plugin-astro": "^0.8.0"
+    "prettier-plugin-astro": "^0.8.0",
+    "typescript": "^4.9.5"
   }
 }
