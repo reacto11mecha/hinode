@@ -1,18 +1,23 @@
 ---
+import { getCollection, getEntryBySlug } from "astro:content";
+
 export async function getStaticPaths() {
-  const materials = await Astro.glob("../../../../materi/bahasa/*.md");
+  const materiEntries = await getCollection("materi", ({ id }) =>
+    id.startsWith("bahasa/")
+  );
+  return await Promise.all(
+    materiEntries.map(async (materi) => {
+      const entry = await getEntryBySlug("materi", materi.slug);
+      const { Content } = await entry.render();
 
-  return materials.map((material) => {
-    const splittedFile = material.file.split("/");
-    const slug = splittedFile[splittedFile.length - 1].replace(".md", "");
-
-    return {
-      params: { slug },
-      props: {
-        Content: material.Content,
-      },
-    };
-  });
+      return {
+        params: { slug: materi.slug.replace("bahasa/", "") },
+        props: {
+          Content,
+        },
+      };
+    })
+  );
 }
 
 const { Content } = Astro.props;

@@ -2,8 +2,8 @@
 import fs from "fs";
 import matter from "gray-matter";
 
-import "reveal.js/dist/reveal.css";
-import "reveal.js/dist/theme/black.css";
+import reveal from "reveal.js/dist/reveal.css?inline";
+import revealBlack from "reveal.js/dist/theme/black.css?inline";
 
 const { title, description, file } = Astro.props.frontmatter;
 
@@ -21,6 +21,9 @@ const { content } = matter(unparsedFile);
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <style set:html={reveal} />
+    <style set:html={revealBlack} />
+
     <title>{title}</title>
   </head>
 
@@ -29,13 +32,13 @@ const { content } = matter(unparsedFile);
       <div class="slides" set:html={content} />
     </div>
 
-    <script type="module" hoist>
+    <script>
       import Reveal from "reveal.js";
-      import RevealZoom from "reveal.js/plugin/zoom/zoom.esm.js";
-      import RevealNotes from "reveal.js/plugin/notes/notes.esm.js";
-      import RevealSearch from "reveal.js/plugin/search/search.esm.js";
-      import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm.js";
-      import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm.js";
+      import RevealZoom from "reveal.js/plugin/zoom/zoom";
+      import RevealNotes from "reveal.js/plugin/notes/notes";
+      import RevealSearch from "reveal.js/plugin/search/search";
+      import RevealMarkdown from "reveal.js/plugin/markdown/markdown";
+      import RevealHighlight from "reveal.js/plugin/highlight/highlight";
 
       Reveal.initialize({
         plugins: [
