@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   vite: {
     ssr: {
-      external: ["reveal.js"],
+      noExternal: ["reveal.js"],
     },
   },
 });
