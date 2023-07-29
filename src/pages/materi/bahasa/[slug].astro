@@ -5,8 +5,9 @@ export async function getStaticPaths() {
   const materiEntries = await getCollection("materi", ({ id }) =>
     id.startsWith("bahasa/")
   );
+
   return await Promise.all(
-    materiEntries.map(async (materi) => {
+    materiEntries.filter(entry => entry.slug.startsWith("bahasa/")).map(async (materi) => {
       const entry = await getEntryBySlug("materi", materi.slug);
       const { Content } = await entry.render();
 
