@@ -5,6 +5,7 @@ const materiCollection = defineCollection({
     layout: z.string().startsWith("@layouts/Presentation"),
     title: z.string(),
     description: z.string(),
+    created_at: z.string(),
   }),
 });
 
