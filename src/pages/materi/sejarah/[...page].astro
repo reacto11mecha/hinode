@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+
 import Default from "@layouts/Default.astro";
 
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths = (async ({ paginate }) => {
   const rekishiLessons = await getCollection("materi", ({ id }) =>
     id.startsWith("sejarah"),
   );
@@ -15,7 +17,9 @@ export async function getStaticPaths({ paginate }) {
   );
 
   return paginate(sortedRekishiLessons, { pageSize: 2 });
-}
+}) satisfies GetStaticPaths;
+
+export type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page } = Astro.props;
 ---

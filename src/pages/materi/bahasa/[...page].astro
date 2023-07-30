@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
+import type { GetStaticPaths } from 'astro';
+
 import Default from "@layouts/Default.astro";
 
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths = (async ({ paginate }) => {
   const bunkaLessons = await getCollection("materi", ({ id }) =>
     id.startsWith("bahasa"),
   );
@@ -15,7 +17,7 @@ export async function getStaticPaths({ paginate }) {
   );
 
   return paginate(sortedBunkaLessons, { pageSize: 2 });
-}
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 ---
