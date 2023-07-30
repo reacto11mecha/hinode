@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry  } from "astro:content";
 
 import type { GetStaticPaths } from 'astro';
 
@@ -18,6 +18,12 @@ export const getStaticPaths = (async ({ paginate }) => {
 
   return paginate(sortedBunkaLessons, { pageSize: 2 });
 }) satisfies GetStaticPaths;
+
+export type Props = {
+  page: {
+    data: CollectionEntry<"materi">[]
+  }
+}
 
 const { page } = Astro.props;
 ---
