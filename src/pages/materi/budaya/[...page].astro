@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+
+import Default from "@layouts/Default.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const bunkaLessons = await getCollection("materi", ({ id }) =>
+    id.startsWith("budaya"),
+  );
+
+  const sortedBunkaLessons = bunkaLessons.sort(
+    (a, b) =>
+      parseInt(a.data.created_at.replace("-", "")) -
+      parseInt(b.data.created_at.replace("-", "")),
+  );
+  return paginate(sortedBunkaLessons, { pageSize: 2 });
+}) satisfies GetStaticPaths;
+
+export type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props;
+---
+
+<Default
+  title="List semua materi budaya"
+  description="Halaman yang menjelaskan semua materi budaya yang ada"
+>
+  <div class="flex flex-col">
+    {
+      page.data.map((lesson) => (
+        <a href={`/materi/${lesson.slug}`}>{lesson.data.title}</a>
+      ))
+    }
+  </div>
+</Default>
