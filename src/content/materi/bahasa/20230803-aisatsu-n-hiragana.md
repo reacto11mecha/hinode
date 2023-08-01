@@ -5,6 +5,34 @@ description: Penjelasan mengenai Aisatsu dan sistem penulisan dalam bahasa jepan
 created_at: "2023-08-03"
 ---
 
+<style>
+  .responsive-image {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  @media (min-width: 772px) {
+    .responsive-image {
+      flex-direction: row;
+    }
+
+    .responsive-image {
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .responsive-image {
+      padding: 0px;
+    }
+  }
+</style>
+
 <section>
   <h1 style="font-size: 3em;">語</h1>
 
@@ -24,7 +52,7 @@ created_at: "2023-08-03"
 </section>
 
 <section>
-  <h2 style="text-transform: none">Hal Yang Akan Dipelajari</h2>
+  <h2 style="text-transform: none">Materi pertemuan hari ini</h2>
   
   <ol>
     <li class="fragment">あいさつ / aisatsu => Salam sapaan</li>
@@ -36,39 +64,13 @@ created_at: "2023-08-03"
     <h2>あいさつ</h2>
 </section>
 
-<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)" style="display: flex !important">
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
     <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
 
-    <style>
-      .konnichiwa-responsive {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-content: center;
-        align-items: center;
-        gap: 1em;
-      }
+    <h6 class="fragment" display="text-style: italic">Intermezzo...</h6>
 
-      @media (min-width: 772px) {
-        .konnichiwa-responsive {
-          flex-direction: row;
-        }
-
-        .konnichiwa-responsive {
-          padding-right: 1em;
-          padding-left: 1em;
-        }
-      }
-
-      @media (min-width: 800px) {
-        .konnichiwa-responsive {
-          padding: 0px;
-        }
-      }
-    </style>
-
-    <div class="konnichiwa-responsive fragment">
-      <img src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/konnichiwa-1.gif" />
+    <div class="responsive-image fragment">
+      <img src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/konnichiwa.gif" />
 
       <div>
         <p>Ada yang tau konnichiwa itu apa?</p>
@@ -76,6 +78,87 @@ created_at: "2023-08-03"
         <p class="fragment font-bold">Selamat Siang!</p>
       </div>
     </div>
+
+</section>
+
+<section data-transition="none">
+    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
+
+    <p style="margin-bottom: 1em;">Macam-macam aisatsu</p>
+
+    <p class="fragment">Yaaa selamat pagi, siang, malam,</p>
+    <p class="fragment">Aku pulang, selamat pulang, dll.</p>
+
+</section>
+
+<section>
+    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
+
+    <p style="margin-bottom: 1em;">Selamat pagi</p>
+
+    <div class="responsive-image">
+      <img width="500" src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/ohayou.gif" />
+
+      <ul>
+        <li class="fragment">おはようございます (Ohayou Gozaimasu)</li>
+        <li class="fragment">おはよう (Ohayou)</li>
+        <li class="fragment">おは (Oha)</li>
+      </ul>
+    </div>
+
+</section>
+
+<section>
+    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
+
+    <p style="margin-bottom: 1em;">Selamat siang</p>
+
+    <i>Skip ajah, dah dijelasin di awal</i>
+
+</section>
+
+<section>
+    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
+
+    <p style="margin-bottom: 1em;">Selamat malam</p>
+
+    <div class="responsive-image">
+      <img width="500" src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/konbanwa.gif" />
+
+
+      <p class="fragment">こんばんわ (Konbanwa)</p>
+    </div>
+
+</section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
+
+    <p style="margin-bottom: 1em;">Aku pulang dan Selamat Pulang</p>
+
+    <div class="responsive-image">
+      <img width="500" src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/tadaima-okaeri.gif" />
+
+      <ul>
+        <li class="fragment">ただいま / tadaima - Aku Pulang (orang dari luar)</li>
+        <li class="fragment">おかえり / okaeri - Selamat Pulang (orang rumah)</li>
+      </ul>
+    </div>
+
+</section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <h2>あいさつ</h2>
+</section>
+
+<section></section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <h2>ひらがな</h2>
+</section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <h2 style="margin-bottom: 20px; letter-spacing: 25px"><span style="color: #a855f7">ひ</span><span style="color: #d946ef">ら</span><span style="color: #ec4899">が</span><span style="color: #f43f5e">な</span></h2>
 
 </section>
 
