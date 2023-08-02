@@ -1,29 +1,31 @@
 ---
-import { getCollection, type CollectionEntry  } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { DateTime } from "luxon";
 
-import type { GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from "astro";
 
 import Default from "@layouts/Default.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const bunkaLessons = await getCollection("materi", ({ id }) =>
+  const goLessons = await getCollection("materi", ({ id }) =>
     id.startsWith("bahasa"),
   );
 
-  const sortedBunkaLessons = bunkaLessons.sort(
-    (a, b) =>
-      parseInt(a.data.created_at.replace("-", "")) -
-      parseInt(b.data.created_at.replace("-", "")),
+  const sortedGoLessons = goLessons.sort((a, b) =>
+    DateTime.fromFormat(b.data.created_at, "yyyy-M-d") >
+    DateTime.fromFormat(a.data.created_at, "yyyy-M-d")
+      ? 1
+      : -1,
   );
 
-  return paginate(sortedBunkaLessons, { pageSize: 2 });
+  return paginate(sortedGoLessons, { pageSize: 2 });
 }) satisfies GetStaticPaths;
 
 export type Props = {
   page: {
-    data: CollectionEntry<"materi">[]
-  }
-}
+    data: CollectionEntry<"materi">[];
+  };
+};
 
 const { page } = Astro.props;
 ---

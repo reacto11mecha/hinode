@@ -42,7 +42,10 @@ created_at: "2023-08-03"
 <section data-transition="fade">
   <h3 style="text-transform: initial;">Materi?</h3>
 
-  <h5 class="fragment" style="font-weight: normal; text-transform: initial;">Sabar, perkenalan dulu.</h5>
+  <div class="responsive-image fragment">
+    <img src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/nuh-uh.jpeg" width="450">
+    <h5 style="font-weight: normal; text-transform: initial;">Sabar, perkenalan dulu.</h5>
+  </div>
 </section>
 
 <section data-transition="zoom">
@@ -56,7 +59,7 @@ created_at: "2023-08-03"
   
   <ol>
     <li class="fragment">あいさつ / aisatsu => Salam sapaan</li>
-    <li class="fragment">ひらがな / hiragana</li>
+    <li class="fragment">ひらがな / hiragana => Penulisan jepang</li>
   </ol>
 </section>
 
@@ -115,6 +118,8 @@ created_at: "2023-08-03"
 
     <i>Skip ajah, dah dijelasin di awal</i>
 
+    <p class="fragment">Jas kidding, こんにちわ (Konnichiwa)</p>
+
 </section>
 
 <section>
@@ -131,7 +136,7 @@ created_at: "2023-08-03"
 
 </section>
 
-<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+<section>
     <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
 
     <p style="margin-bottom: 1em;">Aku pulang dan Selamat Pulang</p>
@@ -142,6 +147,22 @@ created_at: "2023-08-03"
       <ul>
         <li class="fragment">ただいま / tadaima - Aku Pulang (orang dari luar)</li>
         <li class="fragment">おかえり / okaeri - Selamat Pulang (orang rumah)</li>
+      </ul>
+    </div>
+
+</section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <h2 style="margin-bottom: 20px; color: #81b29a; letter-spacing: 25px"><span style="color: #22c55e">あ</span><span style="color: #10b981">い</span><span style="color: #14b8a6">さ</span><span style="color: #06b6d4">つ</span></h2>
+
+    <p>Aku Pergi dan Silahkan Pergi</p>
+
+    <div class="responsive-image">
+      <image width="250" src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/ittekimasu-itterashai.gif" />
+
+      <ul>
+        <li class="fragment">行ってきます / いってきます / ittekimasu - Aku pergi (yang punya hajat)</li>
+        <li class="fragment">行ってらしゃい / いってらしゃい / itterashai - Silahkan pergi (orang rumah)</li>
       </ul>
     </div>
 
@@ -160,6 +181,41 @@ created_at: "2023-08-03"
 <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
     <h2 style="margin-bottom: 20px; letter-spacing: 25px"><span style="color: #a855f7">ひ</span><span style="color: #d946ef">ら</span><span style="color: #ec4899">が</span><span style="color: #f43f5e">な</span></h2>
 
+    <p class="fragment">Mahluk apa ini?</p>
+
+    <ol>
+      <li class="fragment">Proyek salinan dari china</li>
+      <li class="fragment">Sistem "alphabet"Jepang</li>
+      <li class="fragment">Salah satu bentuk penulisan</li>
+      <li class="fragment">Digunakan untuk berkomunikasi</li>
+    </ol>
+
+</section>
+
+<section>
+   <h2 style="margin-bottom: 20px; letter-spacing: 25px"><span style="color: #a855f7">ひ</span><span style="color: #d946ef">ら</span><span style="color: #ec4899">が</span><span style="color: #f43f5e">な</span></h2>
+
+    <div class="fragment responsive-image">
+      <img src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/aiueo.png"/>
+
+      <p>Huruf A-I-U-E-O</p>
+    </div>
+
+</section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+   <h2 style="margin-bottom: 20px; letter-spacing: 25px"><span style="color: #a855f7">ひ</span><span style="color: #d946ef">ら</span><span style="color: #ec4899">が</span><span style="color: #f43f5e">な</span></h2>
+
+    <div class="fragment responsive-image">
+      <img src="/static/materi/bahasa/20230803-aisatsu-n-hiragana/kakikukeko.png"/>
+
+      <p>Huruf KA-KI-KU-KE-KO</p>
+    </div>
+
+</section>
+
+<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <h2>ひらがな</h2>
 </section>
 
 <section data-transition="convex">

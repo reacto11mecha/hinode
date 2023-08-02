@@ -1,7 +1,8 @@
 ---
-import { getCollection, type CollectionEntry  } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { DateTime } from "luxon";
 
-import type { GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from "astro";
 
 import Default from "@layouts/Default.astro";
 
@@ -10,10 +11,11 @@ export const getStaticPaths = (async ({ paginate }) => {
     id.startsWith("sejarah"),
   );
 
-  const sortedRekishiLessons = rekishiLessons.sort(
-    (a, b) =>
-      parseInt(a.data.created_at.replace("-", "")) -
-      parseInt(b.data.created_at.replace("-", "")),
+  const sortedRekishiLessons = rekishiLessons.sort((a, b) =>
+    DateTime.fromFormat(b.data.created_at, "yyyy-M-d") >
+    DateTime.fromFormat(a.data.created_at, "yyyy-M-d")
+      ? 1
+      : -1,
   );
 
   return paginate(sortedRekishiLessons, { pageSize: 2 });
@@ -21,9 +23,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 export type Props = {
   page: {
-    data: CollectionEntry<"materi">[]
-  }
-}
+    data: CollectionEntry<"materi">[];
+  };
+};
 
 const { page } = Astro.props;
 ---
