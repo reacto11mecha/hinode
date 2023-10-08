@@ -44,7 +44,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       <button
-        className="text-xl h-6 w-6 cursor-pointer md:hidden block lg:transform lg:-translate-y-1"
+        className="text-xl h-6 w-6 cursor-pointer md:hidden block lg:transform lg:-translate-y-1 dark:text-white"
         onClick={() => {
           setListVisible(!isListVisible);
         }}
