@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BsSunFill, BsMoon } from "react-icons/bs/index";
 
-export const Navbar = ({ children }) => {
+export const Navbar = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setDarkMode] = useState(false);
   const [isListVisible, setListVisible] = useState(false);
 
