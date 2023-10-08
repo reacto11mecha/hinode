@@ -1,7 +1,15 @@
 ---
-import Default from "@layouts/Default.astro";
+import Default from "@/layouts/Default.astro";
+
+import { Header } from "@/components/home/Header";
+import { Introduction } from "@/components/home/Introduction";
+
+import '@fontsource/zen-kaku-gothic-new/700.css';
 ---
 
 <Default title="HINODE SMAN 12 Bekasi" description="">
-
+  <main>
+    <Header />
+    <Introduction />
+  </main>
 </Default>

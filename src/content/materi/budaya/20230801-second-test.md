@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/Presentation/Black.astro"
+layout: "@/layouts/Presentation/Black.astro"
 title: Test budaya lanjutan
 description: Test konten budaya 2
 created_at: "2023-07-29"

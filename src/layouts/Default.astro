@@ -4,6 +4,14 @@ export interface Props {
     description: string;
 }
 
+import '@fontsource/poppins';
+
+import { Image } from 'astro:assets';
+
+import { Navbar } from "@/components/Navbar";
+
+import logoEskul from "@/assets/hinode.png";
+
 const { title, description } = Astro.props;
 ---
 
@@ -15,9 +23,29 @@ const { title, description } = Astro.props;
 
     <meta name="description" content={description} />
 
+    <script is:inline>
+      const setDarkMode = () => {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      };
+
+      setDarkMode();
+    </script>
+
     <title>{title}</title>
 </head>
-<body>
-    <slot />
+<body class="font-poppins">
+  <Navbar client:idle>
+    <Image src={logoEskul} width="40" alt="A description of my image." />
+  </Navbar>
+
+  <slot />
 </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/Presentation/Black.astro"
+layout: "@/layouts/Presentation/Black.astro"
 title: Aisatsu dan Hiragana Dasar
 description: Penjelasan mengenai Aisatsu dan sistem penulisan dalam bahasa jepang
 created_at: "2023-08-03"

@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 
 import type { GetStaticPaths } from "astro";
 
-import Default from "@layouts/Default.astro";
+import Default from "@/layouts/Default.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const goLessons = await getCollection("materi", ({ id }) =>

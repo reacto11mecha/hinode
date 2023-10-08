@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { DateTime } from "luxon";
 
-import Default from "@layouts/Default.astro";
+import Default from "@/layouts/Default.astro";
 
 const materiEntries = await getCollection("materi");
 
@@ -18,7 +18,7 @@ const sorted = materiEntries.sort((a, b) =>
   title="List semua materi hinode"
   description="Halaman yang menampilkan semua materi yang pernah dibuat"
 >
-  <div class="flex flex-col">
+  <div class="flex flex-col pl-2 pt-16">
     {
       sorted.map((lesson) => (
         <a href={`/materi/${lesson.slug}`}>{lesson.data.title}</a>
