@@ -8,8 +8,8 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     setDarkMode(
       localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches),
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches),
     );
   }, []);
 
@@ -30,7 +30,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
   return (
     <nav
       className={
-        "flex fixed top-0 flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg bg-slate-50 dark:bg-neutral-950 dark:border-neutral-900 border-b border-solid z-10"
+        "flex fixed top-0 flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg bg-neutral-50 dark:bg-neutral-800 dark:border-neutral-800 border-b border-solid z-10"
       }
     >
       <div className="h-[inherit]">
@@ -53,9 +53,8 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
       </button>
 
       <div
-        className={`${
-          isListVisible ? "" : "hidden"
-        } w-full md:flex md:items-center md:w-auto`}
+        className={`${isListVisible ? "" : "hidden"
+          } w-full md:flex md:items-center md:w-auto`}
       >
         <ul
           className={

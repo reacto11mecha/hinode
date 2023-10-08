@@ -1,12 +1,12 @@
 ---
 export interface Props {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
 }
 
-import '@fontsource/poppins';
+import "@fontsource/poppins";
 
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 import { Navbar } from "@/components/Navbar";
 
@@ -15,11 +15,11 @@ import logoEskul from "@/assets/hinode.png";
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="description" content={description} />
 
@@ -40,12 +40,12 @@ const { title, description } = Astro.props;
     </script>
 
     <title>{title}</title>
-</head>
-<body class="font-poppins">
-  <Navbar client:idle>
-    <Image src={logoEskul} width="40" alt="A description of my image." />
-  </Navbar>
+  </head>
+  <body class="font-poppins dark:bg-neutral-900 dark:text-neutral-200">
+    <Navbar client:load>
+      <Image src={logoEskul} width="40" alt="A description of my image." />
+    </Navbar>
 
-  <slot />
-</body>
+    <slot />
+  </body>
 </html>

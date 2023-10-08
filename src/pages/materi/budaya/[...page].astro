@@ -6,6 +6,8 @@ import type { GetStaticPaths } from "astro";
 
 import Default from "@/layouts/Default.astro";
 
+import Template from "@/components/materi/Template.astro";
+
 export const getStaticPaths = (async ({ paginate }) => {
   const bunkaLessons = await getCollection("materi", ({ id }) =>
     id.startsWith("budaya"),
@@ -33,11 +35,5 @@ const { page } = Astro.props;
   title="List semua materi budaya"
   description="Halaman yang menjelaskan semua materi budaya yang ada"
 >
-  <div class="flex flex-col">
-    {
-      page.data.map((lesson) => (
-        <a href={`/materi/${lesson.slug}`}>{lesson.data.title}</a>
-      ))
-    }
-  </div>
+  <Template data={page.data} currentPage="/budaya" />
 </Default>

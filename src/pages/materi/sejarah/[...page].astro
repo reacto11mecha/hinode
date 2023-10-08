@@ -6,6 +6,8 @@ import type { GetStaticPaths } from "astro";
 
 import Default from "@/layouts/Default.astro";
 
+import Template from "@/components/materi/Template.astro";
+
 export const getStaticPaths = (async ({ paginate }) => {
   const rekishiLessons = await getCollection("materi", ({ id }) =>
     id.startsWith("sejarah"),
@@ -34,11 +36,5 @@ const { page } = Astro.props;
   title="List semua materi sejarah"
   description="Halaman yang menjelaskan semua materi sejarah yang ada"
 >
-  <div class="flex flex-col">
-    {
-      page.data.map((lesson) => (
-        <a href={`/materi/${lesson.slug}`}>{lesson.data.title}</a>
-      ))
-    }
-  </div>
+  <Template data={page.data} currentPage="/sejarah" />
 </Default>

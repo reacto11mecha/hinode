@@ -1,0 +1,54 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+import { Chooser } from "./Chooser";
+
+export interface Props {
+  currentPage: string;
+  data: CollectionEntry<"materi">[];
+}
+
+const { data, currentPage } = Astro.props;
+---
+
+<main class="pt-24 flex flex-col gap-7">
+  <section class="flex flex-col gap-3 items-center">
+    <h1 class="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
+      Materi-Materi Reguler
+    </h1>
+
+    <p class="text-center w-[85%] sm:w-[70%] md:w-full text-lg lg:text-xl">
+      Dibawah ini adalah materi-materi reguler hinode yang sudah pernah di
+      jelaskan.
+    </p>
+  </section>
+
+  <section class="px-4 sm:px-6 md:px-8 lg:px-10 flex flex-col gap-2 max-w-fit">
+    <div>Materi Divisi</div>
+
+    <Chooser currentValue={currentPage} client:idle />
+  </section>
+
+  <section
+    class="px-4 pb-5 sm:px-6 md:px-8 lg:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+  >
+    {
+      data.map((lesson) => (
+        <div class="flex flex-col gap-5 rounded border dark:bg-neutral-800 dark:border-neutral-700 p-3">
+          <div class="rounded bg-gray-300 dark:bg-neutral-700 h-36" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-bold">{lesson.data.title}</h3>
+            <p>{lesson.data.description}</p>
+            <small>{lesson.data.created_at}</small>
+          </div>
+          <a
+            class="text-sky-700 dark:text-sky-500"
+            href={`/materi/${lesson.slug}`}
+          >
+            Belajar >>>
+          </a>
+        </div>
+      ))
+    }
+  </section>
+</main>
