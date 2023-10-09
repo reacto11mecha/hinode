@@ -1,7 +1,7 @@
 ---
 layout: "@/layouts/materi/Presentation/Black.astro"
 title: Perubahan Bunyi Hiragana
-description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang
+description: Penjelasan mengenai perubahan bunyi hiragana pada bahasa jepang.
 created_at: "2023-01-26"
 ---
 
