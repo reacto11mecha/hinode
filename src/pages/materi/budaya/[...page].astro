@@ -19,7 +19,8 @@ export const getStaticPaths = (async ({ paginate }) => {
       ? 1
       : -1,
   );
-  return paginate(sortedBunkaLessons, { pageSize: 2 });
+
+  return paginate(sortedBunkaLessons, { pageSize: 15 });
 }) satisfies GetStaticPaths;
 
 export type Props = {

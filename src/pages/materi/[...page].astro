@@ -1,4 +1,6 @@
 ---
+import "@fontsource/zen-kaku-gothic-new/500.css";
+
 import { getCollection, type CollectionEntry } from "astro:content";
 import { DateTime } from "luxon";
 
@@ -8,20 +10,20 @@ import Default from "@/layouts/Default.astro";
 
 import Template from "@/components/materi/Template.astro";
 
-export const getStaticPaths = (async ({ paginate }) => {
-  const rekishiLessons = await getCollection("materi", ({ id }) =>
-    id.startsWith("sejarah"),
-  );
 
-  const sortedRekishiLessons = rekishiLessons.sort((a, b) =>
+export const getStaticPaths = (async ({ paginate }) => {
+  const materiEntries = await getCollection("materi");
+
+  const sorted = materiEntries.sort((a, b) =>
     DateTime.fromFormat(b.data.created_at, "yyyy-M-d") >
     DateTime.fromFormat(a.data.created_at, "yyyy-M-d")
       ? 1
       : -1,
   );
 
-  return paginate(sortedRekishiLessons, { pageSize: 15 });
+  return paginate(sorted, { pageSize: 15 });
 }) satisfies GetStaticPaths;
+
 
 export type Props = {
   page: {
@@ -33,8 +35,8 @@ const { page } = Astro.props;
 ---
 
 <Default
-  title="List semua materi sejarah"
-  description="Halaman yang menjelaskan semua materi sejarah yang ada"
+  title="List semua materi hinode"
+  description="Halaman yang menampilkan semua materi yang pernah dibuat"
 >
-  <Template data={page.data} currentPage="/sejarah" />
+  <Template data={page.data} currentPage="/" />
 </Default>

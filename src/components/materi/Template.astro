@@ -39,14 +39,25 @@ const { data, currentPage } = Astro.props;
           <div class="flex flex-col gap-2">
             <h3 class="font-bold text-xl">{lesson.data.title}</h3>
             <p class="text-lg">{lesson.data.description}</p>
-            <small class="text-base font-zenka text-gray-500 dark:text-gray-400">{lesson.data.created_at.replace("-", "年 ").replace("-", "月 ")}日</small>
+            <small class="text-base font-zenka text-gray-600 dark:text-gray-400">{lesson.data.created_at.replace("-", "年 ").replace("-", "月 ")}日</small>
           </div>
+        {lesson.data.isExternal && lesson.data.link ? (
+          <a
+            class="text-sky-700 dark:text-sky-500"
+            href={lesson.data.link}
+            target="_blank"
+            ref="noopener noreferrer"
+          >
+            Belajar >>>
+          </a>
+        ): (
           <a
             class="text-sky-700 dark:text-sky-500"
             href={`/materi/${lesson.slug}`}
           >
             Belajar >>>
           </a>
+        )}
         </div>
       ))
     }

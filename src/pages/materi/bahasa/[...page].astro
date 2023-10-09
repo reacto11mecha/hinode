@@ -20,7 +20,7 @@ export const getStaticPaths = (async ({ paginate }) => {
       : -1,
   );
 
-  return paginate(sortedGoLessons, { pageSize: 2 });
+  return paginate(sortedGoLessons, { pageSize: 15 });
 }) satisfies GetStaticPaths;
 
 export type Props = {

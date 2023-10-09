@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   );
 
   return await Promise.all(
-    materiEntries.filter(entry => entry.slug.startsWith("bahasa/")).map(async (materi) => {
+    materiEntries.filter(entry => entry.slug.startsWith("bahasa/")).filter(entry => !entry.data.isExternal).map(async (materi) => {
       const entry = await getEntryBySlug("materi", materi.slug);
       const { Content } = await entry.render();
 
