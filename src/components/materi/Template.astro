@@ -37,9 +37,9 @@ const { data, currentPage } = Astro.props;
         <div class="flex flex-col gap-5 rounded border dark:bg-neutral-800 dark:border-neutral-700 p-3">
           <div class="rounded bg-gray-300 dark:bg-neutral-700 h-36" />
           <div class="flex flex-col gap-2">
-            <h3 class="font-bold">{lesson.data.title}</h3>
-            <p>{lesson.data.description}</p>
-            <small>{lesson.data.created_at}</small>
+            <h3 class="font-bold text-xl">{lesson.data.title}</h3>
+            <p class="text-lg">{lesson.data.description}</p>
+            <small class="text-base font-zenka text-gray-500 dark:text-gray-400">{lesson.data.created_at.replace("-", "年 ").replace("-", "月 ")}日</small>
           </div>
           <a
             class="text-sky-700 dark:text-sky-500"

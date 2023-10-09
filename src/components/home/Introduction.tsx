@@ -1,6 +1,6 @@
 export const Introduction = () => {
   return (
-    <section className="m-auto min-h-[160vh] md:min-h-screen px-6 pt-24 sm:px-14 sm:pt-28 md:px-16">
+    <section className="m-auto px-6 py-20 sm:px-14 sm:py-15 md:px-16">
       <div className="font-light font-lato flex flex-wrap gap-10 text-xl md:flex-nowrap md:gap-18 lg:gap-12 lg:text-2xl leading-loose">
         <p>
           <span className="font-bold">HINODE</span> atau{" "}
