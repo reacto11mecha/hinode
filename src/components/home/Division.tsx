@@ -14,7 +14,7 @@ export const Division = () => {
   return (
     <section className="m-auto px-6 pb-10 sm:px-14 md:px-16">
       <div className="flex flex-col items-center gap-8">
-        <h1 class="font-bold text-center text-4xl">DIVISI</h1>
+        <h1 className="font-bold text-center text-4xl">DIVISI</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
           {divisions.map((division) => (
