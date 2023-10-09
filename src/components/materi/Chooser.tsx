@@ -1,6 +1,6 @@
 export const Chooser = ({ currentValue }: { currentValue: string }) => (
   <select
-    className="border rounded p-2 dark:bg-neutral-800 dark:border-neutral-800"
+    className="border rounded p-2 bg-neutral-50 dark:bg-neutral-800 dark:border-neutral-800"
     onChange={(e) => {
       location.href = `/materi${e.target.value}`;
     }}
