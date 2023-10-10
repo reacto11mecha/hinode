@@ -4,11 +4,14 @@ import { type CollectionEntry } from "astro:content";
 import { Chooser } from "./Chooser";
 
 export interface Props {
+  nextPage: string | undefined;
+  prevPage: string | undefined;
   currentPage: string;
+  currentPageNumber: number;
   data: CollectionEntry<"materi">[];
 }
 
-const { data, currentPage } = Astro.props;
+const { data, currentPage, currentPageNumber, nextPage, prevPage } = Astro.props;
 ---
 
 <main class="pt-24 flex flex-col gap-7">
@@ -76,5 +79,19 @@ const { data, currentPage } = Astro.props;
         </div>
       ))
     }
+  </section>
+
+  <section
+    class="flex justify-center items-center"
+  >
+      {prevPage && <a href={prevPage} class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center">
+        <p class="text-lg font-bold">&lt;</p>
+      </a>}
+      <div class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 flex items-center justify-center">
+        <p class="text-lg text-center font-bold">{currentPageNumber}</p>
+      </div>
+      {nextPage && <a href={nextPage} class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center">
+        <p class="text-lg font-bold">&gt;</p>
+      </a>}
   </section>
 </main>

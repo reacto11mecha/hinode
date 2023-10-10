@@ -36,5 +36,11 @@ const { page } = Astro.props;
   title="List semua materi bahasa"
   description="Halaman yang menjelaskan semua materi bahasa yang ada"
 >
-  <Template data={page.data} currentPage="/bahasa" />
+  <Template
+    data={page.data}
+    currentPage="/bahasa"
+    currentPageNumber={page.currentPage}
+    nextPage={page.url.next}
+    prevPage={page.url.prev}
+  />
 </Default>

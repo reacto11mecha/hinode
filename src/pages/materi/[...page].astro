@@ -38,5 +38,11 @@ const { page } = Astro.props;
   title="List semua materi hinode"
   description="Halaman yang menampilkan semua materi yang pernah dibuat"
 >
-  <Template data={page.data} currentPage="/" />
+  <Template 
+    data={page.data}
+    currentPage="/"
+    currentPageNumber={page.currentPage}
+    nextPage={page.url.next}
+    prevPage={page.url.prev}
+  />
 </Default>

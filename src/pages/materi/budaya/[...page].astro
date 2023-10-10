@@ -36,5 +36,11 @@ const { page } = Astro.props;
   title="List semua materi budaya"
   description="Halaman yang menjelaskan semua materi budaya yang ada"
 >
-  <Template data={page.data} currentPage="/budaya" />
+  <Template
+    data={page.data}
+    currentPage="/budaya"
+    currentPageNumber={page.currentPage}
+    nextPage={page.url.next}
+    prevPage={page.url.prev}
+  />
 </Default>

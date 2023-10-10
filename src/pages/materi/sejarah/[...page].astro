@@ -36,5 +36,11 @@ const { page } = Astro.props;
   title="List semua materi sejarah"
   description="Halaman yang menjelaskan semua materi sejarah yang ada"
 >
-  <Template data={page.data} currentPage="/sejarah" />
+  <Template
+    data={page.data}
+    currentPage="/sejarah"
+    currentPageNumber={page.currentPage}
+    nextPage={page.url.next}
+    prevPage={page.url.prev}
+  />
 </Default>
