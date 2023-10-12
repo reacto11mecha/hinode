@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { DateTime } from "luxon";
 
-import type { GetStaticPaths } from "astro";
+import type { GetStaticPaths, Page } from "astro";
 
 import Default from "@/layouts/Default.astro";
 
@@ -24,9 +24,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 export type Props = {
-  page: {
-    data: CollectionEntry<"materi">[];
-  };
+  page: Page & { data: CollectionEntry<"materi">[] }
 };
 
 const { page } = Astro.props;
