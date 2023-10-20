@@ -4,13 +4,15 @@ import sitemap from "@astrojs/sitemap";
 
 import react from "@astrojs/react";
 
+import { thumbnailIntegration } from "./src/integrations/thumbnail";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://hinode.rmecha.my.id",
   vite: {
     ssr: {
-      noExternal: ["reveal.js"]
-    }
+      noExternal: ["reveal.js"],
+    },
   },
-  integrations: [tailwind(), sitemap(), react()]
+  integrations: [tailwind(), sitemap(), react(), thumbnailIntegration()],
 });
