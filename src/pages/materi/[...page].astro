@@ -4,12 +4,11 @@ import "@fontsource/zen-kaku-gothic-new/500.css";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { DateTime } from "luxon";
 
-import type { GetStaticPaths } from "astro";
+import type { GetStaticPaths, Page } from "astro";
 
 import Default from "@/layouts/Default.astro";
 
 import Template from "@/components/materi/Template.astro";
-
 
 export const getStaticPaths = (async ({ paginate }) => {
   const materiEntries = await getCollection("materi");
@@ -26,9 +25,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 
 export type Props = {
-  page: {
-    data: CollectionEntry<"materi">[];
-  };
+  page: Page & { data: CollectionEntry<"materi">[] }
 };
 
 const { page } = Astro.props;

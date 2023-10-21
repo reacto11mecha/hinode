@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+import goPng from "@/assets/go.png";
+import bunkaPng from "@/assets/bunka.png";
+import rekishiPng from "@/assets/rekishi.png";
+
+const divisions = [
+  {
+    name: "BAHASA (語/ご)",
+    img: goPng,
+  },
+  {
+    name: "BUDAYA  (文化 / ぶんか)",
+    img: bunkaPng,
+  },
+  {
+    name: "SEJARAH (歴史 / れきし)",
+    img: rekishiPng,
+  },
+];
+---
+
+<section class="m-auto px-6 pb-10 sm:px-14 md:px-16">
+  <div class="flex flex-col items-center gap-8">
+    <h1 class="font-bold text-center text-4xl">DIVISI</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+      {divisions.map((division) => (
+        <div
+          class="flex flex-col items-center justify-between gap-5 p-5 border rounded dark:bg-neutral-800 dark:border-neutral-700"
+        >        
+          <Image width="250" height="250" src={division.img} alt={`Gambar divisi ${division.name}`} />
+
+          <h2 class="text-center text-xl font-bold font-zenka">
+            {division.name}
+          </h2>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
