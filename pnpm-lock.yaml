@@ -20,6 +20,9 @@ dependencies:
   '@fontsource/poppins':
     specifier: ^5.0.8
     version: 5.0.8
+  '@fontsource/rosario':
+    specifier: ^5.0.8
+    version: 5.0.8
   '@fontsource/zen-kaku-gothic-new':
     specifier: ^5.0.14
     version: 5.0.14
@@ -921,6 +924,10 @@ packages:
 
   /@fontsource/poppins@5.0.8:
     resolution: {integrity: sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==}
+    dev: false
+
+  /@fontsource/rosario@5.0.8:
+    resolution: {integrity: sha512-o9dQ3SWQZkFISBWM+GJD6Q43XSHR8j1riUfFBMFUwcQW6Et+A0SQGJJAvls9ihbNzT4l0xpWF8vfSDqO9iESSQ==}
     dev: false
 
   /@fontsource/zen-kaku-gothic-new@5.0.14:
