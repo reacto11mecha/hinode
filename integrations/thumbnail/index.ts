@@ -7,7 +7,7 @@ import path from "path";
 import fs from "fs";
 
 import type { AstroIntegration } from "astro";
-import type { TMateri } from "../../content/config";
+import type { TMateri } from "../../src/content/config";
 
 type integrationOptions = {
   chunks?: number;
@@ -19,7 +19,7 @@ export const thumbnailIntegration = (
   const chunkSize = options?.chunks ?? 10;
 
   // Prepare root of this project
-  const rootProject = path.join(fileURLToPath(import.meta.url), "../../../..");
+  const rootProject = path.join(fileURLToPath(import.meta.url), "../../..");
 
   return {
     name: "hinode-thumbnail-integration",
@@ -36,8 +36,6 @@ export const thumbnailIntegration = (
           cwd: path.join(rootProject, "src/content/materi"),
         });
 
-        console.log(lessonsList);
-
         // Extract lessons yaml
         const lessonsData = lessonsList.map((lessonPath) => ({
           data: matter(
@@ -48,8 +46,6 @@ export const thumbnailIntegration = (
           ).data as TMateri,
           path: lessonPath.replace(".md", "/"),
         }));
-
-        console.log(lessonsData);
 
         // Filter non external lessons
         const filterNonExternal = lessonsData.filter(
