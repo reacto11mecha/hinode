@@ -24,7 +24,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 export type Props = {
-  page: Page & { data: CollectionEntry<"materi">[] }
+  page: Page & { data: CollectionEntry<"materi">[] };
 };
 
 const { page } = Astro.props;
@@ -33,6 +33,7 @@ const { page } = Astro.props;
 <Default
   title="List semua materi budaya"
   description="Halaman yang menjelaskan semua materi budaya yang ada"
+  ogImage="/og-page-materi-budaya.png"
 >
   <Template
     data={page.data}

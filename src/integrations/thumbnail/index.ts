@@ -71,6 +71,28 @@ export const thumbnailIntegration = (
               path: pathSplitted[1],
             };
           }),
+          ...filteredPages.map((page) => {
+            return {
+              title: `Halaman ${
+                page.pathname === ""
+                  ? "Utama"
+                  : page.pathname.replaceAll("/", " ")
+              }`,
+              description:
+                page.pathname === ""
+                  ? "Utama"
+                  : `Path halaman: /${page.pathname}`,
+              date: "",
+              path: `page-${
+                page.pathname === ""
+                  ? "index"
+                  : page.pathname
+                      .split("/")
+                      .filter((p) => p !== "")
+                      .join("-")
+              }`,
+            };
+          }),
         ];
 
         if (isMainThread) {

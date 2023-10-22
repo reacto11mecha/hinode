@@ -23,9 +23,8 @@ export const getStaticPaths = (async ({ paginate }) => {
   return paginate(sorted, { pageSize: 15 });
 }) satisfies GetStaticPaths;
 
-
 export type Props = {
-  page: Page & { data: CollectionEntry<"materi">[] }
+  page: Page & { data: CollectionEntry<"materi">[] };
 };
 
 const { page } = Astro.props;
@@ -34,8 +33,9 @@ const { page } = Astro.props;
 <Default
   title="List semua materi hinode"
   description="Halaman yang menampilkan semua materi yang pernah dibuat"
+  ogImage="/og-page-materi.png"
 >
-  <Template 
+  <Template
     data={page.data}
     currentPage="/"
     currentPageNumber={page.currentPage}

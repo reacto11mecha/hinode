@@ -2,6 +2,7 @@
 export interface Props {
   title: string;
   description: string;
+  ogImage?: string;
 }
 
 import "@fontsource/poppins";
@@ -14,7 +15,7 @@ import { Footer } from "@/components/Footer";
 
 import logoEskul from "@/assets/hinode.png";
 
-const { title, description } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,27 +26,35 @@ const { title, description } = Astro.props;
 
     <meta name="description" content={description} />
 
-    <script is:inline>
-      const setDarkMode = () => {
-        if (
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      };
+    {ogImage && (
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={`/ogs${ogImage}`} />
+      <meta property="og:url" content={Astro.site} />
+    )}
 
-      setDarkMode();
+    <script is:inline>
+    const setDarkMode = () => {
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    setDarkMode();
     </script>
 
     <title>{title}</title>
   </head>
   <body class="font-poppins dark:bg-neutral-900 dark:text-neutral-200">
     <Navbar client:load>
-      <Image src={logoEskul} width="40" alt="A description of my image." />
+      <Image src={logoEskul} width="40" alt="Logo ekstrakurikuler hinode" />
     </Navbar>
 
     <slot />
