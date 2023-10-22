@@ -11,7 +11,8 @@ export interface Props {
   data: CollectionEntry<"materi">[];
 }
 
-const { data, currentPage, currentPageNumber, nextPage, prevPage } = Astro.props;
+const { data, currentPage, currentPageNumber, nextPage, prevPage } =
+  Astro.props;
 ---
 
 <main class="pt-24 flex flex-col gap-7">
@@ -38,7 +39,13 @@ const { data, currentPage, currentPageNumber, nextPage, prevPage } = Astro.props
     {
       data.map((lesson) => (
         <div class="flex flex-col gap-5 rounded border dark:bg-neutral-800 dark:border-neutral-700 p-3">
-          <div class="rounded bg-gray-300 dark:bg-neutral-700 aspect-video" />
+          <div class="rounded bg-gray-300 dark:bg-neutral-700">
+            <img
+              class="aspect-video"
+              src={`/ogs/og-${lesson.slug.split("/")[1]}.png`}
+              alt={`Gambar thumbnail untuk ${lesson.data.title}`}
+            />
+          </div>
           <div class="flex flex-col gap-2">
             <h3 class="font-bold text-xl">{lesson.data.title}</h3>
             <p class="text-lg">{lesson.data.description}</p>
@@ -81,17 +88,31 @@ const { data, currentPage, currentPageNumber, nextPage, prevPage } = Astro.props
     }
   </section>
 
-  <section
-    class="flex justify-center items-center"
-  >
-      {prevPage && <a href={prevPage} class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center">
-        <p class="text-lg font-bold">&lt;</p>
-      </a>}
-      <div class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 flex items-center justify-center">
-        <p class="text-lg text-center font-bold">{currentPageNumber}</p>
-      </div>
-      {nextPage && <a href={nextPage} class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center">
-        <p class="text-lg font-bold">&gt;</p>
-      </a>}
+  <section class="flex justify-center items-center">
+    {
+      prevPage && (
+        <a
+          href={prevPage}
+          class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center"
+        >
+          <p class="text-lg font-bold">&lt;</p>
+        </a>
+      )
+    }
+    <div
+      class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 flex items-center justify-center"
+    >
+      <p class="text-lg text-center font-bold">{currentPageNumber}</p>
+    </div>
+    {
+      nextPage && (
+        <a
+          href={nextPage}
+          class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center"
+        >
+          <p class="text-lg font-bold">&gt;</p>
+        </a>
+      )
+    }
   </section>
 </main>

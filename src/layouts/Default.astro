@@ -3,6 +3,7 @@ export interface Props {
   title: string;
   description: string;
   ogImage?: string;
+  ogUrl?: string;
 }
 
 import "@fontsource/poppins";
@@ -15,7 +16,7 @@ import { Footer } from "@/components/Footer";
 
 import logoEskul from "@/assets/hinode.png";
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, ogUrl } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,8 +31,8 @@ const { title, description, ogImage } = Astro.props;
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`/ogs${ogImage}`} />
-      <meta property="og:url" content={Astro.site} />
+      <meta property="og:image" content={`${Astro.site}ogs${ogImage}`} />
+      <meta property="og:url" content={`${Astro.site}${!ogUrl ? "" : ogUrl}`} />
     )}
 
     <script is:inline>

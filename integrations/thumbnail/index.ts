@@ -36,6 +36,8 @@ export const thumbnailIntegration = (
           cwd: path.join(rootProject, "src/content/materi"),
         });
 
+        console.log(lessonsList);
+
         // Extract lessons yaml
         const lessonsData = lessonsList.map((lessonPath) => ({
           data: matter(
@@ -46,6 +48,8 @@ export const thumbnailIntegration = (
           ).data as TMateri,
           path: lessonPath.replace(".md", "/"),
         }));
+
+        console.log(lessonsData);
 
         // Filter non external lessons
         const filterNonExternal = lessonsData.filter(

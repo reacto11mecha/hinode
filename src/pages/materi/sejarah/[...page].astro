@@ -34,6 +34,7 @@ const { page } = Astro.props;
   title="List semua materi sejarah"
   description="Halaman yang menjelaskan semua materi sejarah yang ada"
   ogImage="/og-page-materi-sejarah.png"
+  ogUrl={page.url.current.replace("/", "")}
 >
   <Template
     data={page.data}

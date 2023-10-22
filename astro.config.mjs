@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 
 import react from "@astrojs/react";
 
-import { thumbnailIntegration } from "./src/integrations/thumbnail";
+import { thumbnailIntegration } from "./integrations/thumbnail";
 
 // https://astro.build/config
 export default defineConfig({
