@@ -34,7 +34,7 @@ const { data, currentPage, currentPageNumber, nextPage, prevPage } =
   </section>
 
   <section
-    class="px-4 pb-5 sm:px-6 md:px-8 lg:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+    class="px-4 pb-5 sm:px-6 md:px-8 lg:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
   >
     {
       data.map((lesson) => (
@@ -43,7 +43,7 @@ const { data, currentPage, currentPageNumber, nextPage, prevPage } =
             <img
               class="aspect-video"
               src={`/ogs/og-${lesson.slug.split("/")[1]}.png`}
-              alt={`Gambar thumbnail untuk ${lesson.data.title}`}
+              alt={`Gambar thumbnail untuk "${lesson.data.title}"`}
             />
           </div>
           <div class="flex flex-col gap-2">
