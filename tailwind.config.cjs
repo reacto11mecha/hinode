@@ -15,6 +15,7 @@ module.exports = {
     fontFamily: {
       zenka: ["Zen Kaku Gothic New", "sans-serif"],
       poppins: ["Poppins", "sans-serif"],
+      play: ["Play", "sans-serif"],
     },
   },
   plugins: [],

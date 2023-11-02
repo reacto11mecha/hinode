@@ -1,5 +1,44 @@
 ---
 import Default from "@/layouts/Default.astro";
+
+type TGen = {
+  title: string;
+  members: {
+    katakana: string;
+    name: string;
+  }[];
+  katakanaMax: number;
+};
+
+const generations: TGen[] = [
+  {
+    title: "Angkatan 9-10",
+    members: [
+      {
+        katakana: "セラフィム",
+        name: "Serafim",
+      },
+      {
+        katakana: "ムフリー",
+        name: "Muflih",
+      },
+      {
+        katakana: "ラジェンヅラ",
+        name: "Rajendra",
+      },
+      {
+        katakana: "リフキ",
+        name: "Rifqi",
+      },
+      { katakana: "シチ", name: "Siti" },
+      { katakana: "ナウファル", name: "Naufal" },
+      { katakana: "フィクリ", name: "Fiqri" },
+      { katakana: "アルフィー", name: "Alfy" },
+      { katakana: "エズラ", name: "Ezra" },
+    ],
+    katakanaMax: 6,
+  },
+];
 ---
 
 <Default
@@ -7,4 +46,28 @@ import Default from "@/layouts/Default.astro";
   description="Halaman keanggotaan hinode sman 12 bekasi"
   ogImage="/og-page-keanggotaan.png"
   ogUrl="keanggotaan"
-/>
+>
+  <main class="pt-24 flex flex-col gap-7">
+    <section class="flex flex-col gap-3 items-center">
+      <h1 class="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
+        Susunan Badan Pengurus Harian (BPH)
+      </h1>
+    </section>
+
+    {
+      generations.map((generation) => (
+        <section class="flex flex-col items-center gap-5">
+          <h1 class="text-center text-lg font-bold md:text-xl lg:text-2xl">
+            {generation.title}
+          </h1>
+
+          <div class="grid grid-cols-3 gap-10">
+            {generation.members.map((member) => (
+              <div class="bg-black w-9 h-16">{member.name}</div>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</Default>

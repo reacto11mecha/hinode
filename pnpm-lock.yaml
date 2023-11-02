@@ -23,6 +23,9 @@ dependencies:
   '@fontsource/noto-sans-jp':
     specifier: ^5.0.16
     version: 5.0.16
+  '@fontsource/play':
+    specifier: ^5.0.17
+    version: 5.0.17
   '@fontsource/poppins':
     specifier: ^5.0.8
     version: 5.0.8
@@ -934,6 +937,10 @@ packages:
 
   /@fontsource/noto-sans-jp@5.0.16:
     resolution: {integrity: sha512-ui7pvtNs394zfDTLfJxcXLBd2hC2DvfXbjfnvXTjzgSXOVptPegqAKnjw5OUDGlYHqlEfS43glDCmh1v9aBuFQ==}
+    dev: false
+
+  /@fontsource/play@5.0.17:
+    resolution: {integrity: sha512-hHKXfup5zntfTHXNkHowFqBFxpiSegpXPgVopVjdrBwUbj45D5mjgxygZ5qaZBkUHIp6uU2DELGZLOXAM9FFRQ==}
     dev: false
 
   /@fontsource/poppins@5.0.8:
