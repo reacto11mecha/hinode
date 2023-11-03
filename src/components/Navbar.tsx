@@ -8,8 +8,8 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     setDarkMode(
       localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches),
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
     );
   }, []);
 
@@ -53,8 +53,9 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
       </button>
 
       <div
-        className={`${isListVisible ? "" : "hidden"
-          } w-full md:flex md:items-center md:w-auto`}
+        className={`${
+          isListVisible ? "" : "hidden"
+        } w-full md:flex md:items-center md:w-auto`}
       >
         <ul
           className={

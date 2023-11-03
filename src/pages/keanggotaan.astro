@@ -1,5 +1,8 @@
 ---
 import Default from "@/layouts/Default.astro";
+import Modal from "@/components/keanggotaan/Modal.astro";
+
+import { FireModalButton } from "@/components/keanggotaan/FireModalButton";
 
 type TGen = {
   title: string;
@@ -47,6 +50,8 @@ const generations: TGen[] = [
   ogImage="/og-page-keanggotaan.png"
   ogUrl="keanggotaan"
 >
+  <Modal />
+  
   <main class="pt-24 flex flex-col gap-7">
     <section class="flex flex-col gap-3 items-center">
       <h1 class="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
@@ -61,12 +66,14 @@ const generations: TGen[] = [
             {generation.title}
           </h1>
 
-          <div class="grid grid-cols-3 gap-12">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {generation.members.map((member) => (
-              <div class="bg-slate-100 text-black w-[18em] h-[20em] flex flex-col justify-end">
+              <div class="bg-slate-100 dark:bg-stone-800 text-black w-[18em] h-[20em] flex flex-col justify-end">
+                <FireModalButton client:load />
+
                 <div class="flex flex-row">
                   {Array.from({ length: generation.katakanaMax }).map((_, idx) => (
-                    <div class="h-10 border w-full flex items-center justify-center font-zenka font-semibold text-xl">
+                    <div class="h-10 border w-full flex dark:text-white items-center justify-center font-zenka font-semibold text-xl">
                       {member.katakana.split("")[idx] ?? ""}
                     </div>
                   ))} 
