@@ -17,18 +17,15 @@
   </div>
 </div>
 
-<script>
+<script is:inline>
   const overlay = document.querySelector('.modal-overlay');
   overlay.addEventListener('click', toggleModal);
 
   const closeModal = document.querySelector('.modal-close');
   closeModal.addEventListener('click', toggleModal);
-
   
   document.addEventListener("keydown", (evt) => {
-    const isEscape = evt.keyCode === 27 || evt.key === "Escape";
-
-    if (isEscape && document.body.classList.contains('modal-active')) {
+    if (evt.key === "Escape" && document.body.classList.contains('modal-active')) {
   	  toggleModal()
     }
   })
