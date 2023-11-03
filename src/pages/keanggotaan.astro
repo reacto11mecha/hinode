@@ -61,9 +61,17 @@ const generations: TGen[] = [
             {generation.title}
           </h1>
 
-          <div class="grid grid-cols-3 gap-10">
+          <div class="grid grid-cols-3 gap-12">
             {generation.members.map((member) => (
-              <div class="bg-black w-9 h-16">{member.name}</div>
+              <div class="bg-slate-100 text-black w-[18em] h-[20em] flex flex-col justify-end">
+                <div class="flex flex-row">
+                  {Array.from({ length: generation.katakanaMax }).map((_, idx) => (
+                    <div class="h-10 border w-full flex items-center justify-center font-zenka font-semibold text-xl">
+                      {member.katakana.split("")[idx] ?? ""}
+                    </div>
+                  ))} 
+                </div>
+              </div>
             ))}
           </div>
         </section>
