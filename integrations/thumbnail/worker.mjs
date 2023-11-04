@@ -32,11 +32,11 @@ const NotoSansJP = fs.readFileSync(
 );
 
 const hinodImage = fs.readFileSync(
-  path.resolve("src/assets/hinode-ramah-satori.png"),
+  path.resolve("src/assets/img/hinode-ramah-satori.png"),
   "base64",
 );
 const bgImage = fs.readFileSync(
-  path.resolve("src/assets/bg-hinode.png"),
+  path.resolve("src/assets/img/bg-hinode.png"),
   "base64",
 );
 
