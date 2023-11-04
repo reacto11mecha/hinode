@@ -14,6 +14,9 @@ export const Member = ({ katakanaMax, memberData }: {
       const nihonName = document.querySelector(".modal #nihon-name")!;
       nihonName.textContent = memberData.katakana;
 
+      const message = document.querySelector(".modal #message")!;
+      message.textContent = memberData.message;
+
       const position = document.querySelector(".modal #position")!;
       position.textContent = memberData.position;
 

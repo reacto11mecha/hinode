@@ -1,5 +1,5 @@
 <div
-  class="modal z-50 opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
+  class="modal z-50 transition-all ease-in-out opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
 >
   <div
     class="modal-overlay absolute w-full h-full bg-white dark:bg-slate-800 opacity-100"
@@ -24,7 +24,6 @@
        (Esc)
     </div>
 
-    <!-- Add margin if you want to see grey behind the modal-->
     <div class="modal-content container h-screen text-left p-10">
       <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 h-full">
         <div
@@ -43,12 +42,7 @@
             </h2>
           </div>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-            harum dolorum eos, perferendis exercitationem dolorem tempore
-            veniam, aut deleniti deserunt dolore repellat quos temporibus,
-            eveniet ex ut. Veniam, nobis facere!
-          </p>
+          <p id="message"></p>
 
           <div class="flex flex-col gap-2">
             <h1 class="text-xl md:text-2xl xl:text-3xl">Jabatan</h1>
