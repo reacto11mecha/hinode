@@ -1,41 +1,95 @@
-  <div class="modal z-50 opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
-  <div class="modal-overlay absolute w-full h-full bg-white dark:bg-slate-800 opacity-100"></div>
+<div
+  class="modal z-50 opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
+>
+  <div
+    class="modal-overlay absolute w-full h-full bg-white dark:bg-slate-800 opacity-100"
+  >
+  </div>
 
   <div class="modal-container fixed w-full h-full z-50 overflow-y-auto">
-    
-	<div class="modal-close dark:text-white absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-black text-sm z-50">
-      <svg class="fill-current text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+    <div
+      class="modal-close dark:text-white absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-black text-sm z-50"
+    >
+      <svg
+        class="fill-current text-black dark:text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+      >
+        <path
+          d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+        ></path>
       </svg>
-      (Esc)
+       (Esc)
     </div>
 
     <!-- Add margin if you want to see grey behind the modal-->
-    <div class="modal-content container mx-auto h-auto text-left p-4">
+    <div class="modal-content container h-screen text-left p-10">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 h-full">
+        <div
+          class="flex flex-col w-full gap-10 sm:gap-0 sm:h-full sm:justify-between"
+        >
+          <div class="flex flex-col gap-3">
+            <h1
+              class="font-play text-3xl md:text-4xl xl:text-5xl"
+              id="normal-name"
+            >
+            </h1>
+            <h2
+              class="font-zenka text-lg md:text-xl xl:text-2xl"
+              id="nihon-name"
+            >
+            </h2>
+          </div>
 
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
+            harum dolorum eos, perferendis exercitationem dolorem tempore
+            veniam, aut deleniti deserunt dolore repellat quos temporibus,
+            eveniet ex ut. Veniam, nobis facere!
+          </p>
+
+          <div class="flex flex-col gap-2">
+            <h1 class="text-xl md:text-2xl xl:text-3xl">Jabatan</h1>
+            <h2
+              class="text-2xl md:text-3xl xl:text-4xl font-bold"
+              id="position"
+            >
+            </h2>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center pb-10 sm:pb-0">
+          <div class="w-[18em] h-[27em] bg-slate-500"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <script is:inline>
-  const overlay = document.querySelector('.modal-overlay');
-  overlay.addEventListener('click', toggleModal);
+  const overlay = document.querySelector(".modal-overlay");
+  overlay.addEventListener("click", toggleModal);
 
-  const closeModal = document.querySelector('.modal-close');
-  closeModal.addEventListener('click', toggleModal);
-  
+  const closeModal = document.querySelector(".modal-close");
+  closeModal.addEventListener("click", toggleModal);
+
   document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape" && document.body.classList.contains('modal-active')) {
-  	  toggleModal()
+    if (
+      evt.key === "Escape" &&
+      document.body.classList.contains("modal-active")
+    ) {
+      toggleModal();
     }
-  })
-  
-  function toggleModal () {
-    const body = document.querySelector('body')
-    const modal = document.querySelector('.modal')
+  });
 
-    modal.classList.toggle('opacity-0')
-    modal.classList.toggle('pointer-events-none')
-    body.classList.toggle('modal-active')
+  function toggleModal() {
+    const body = document.querySelector("body");
+    const modal = document.querySelector(".modal");
+
+    modal.classList.toggle("opacity-0");
+    modal.classList.toggle("pointer-events-none");
+    body.classList.toggle("modal-active");
   }
 </script>

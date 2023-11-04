@@ -2,46 +2,9 @@
 import Default from "@/layouts/Default.astro";
 import Modal from "@/components/keanggotaan/Modal.astro";
 
-import { FireModalButton } from "@/components/keanggotaan/FireModalButton";
+import { Member } from "@/components/keanggotaan/Member";
 
-type TGen = {
-  title: string;
-  members: {
-    katakana: string;
-    name: string;
-  }[];
-  katakanaMax: number;
-};
-
-const generations: TGen[] = [
-  {
-    title: "Angkatan 9-10",
-    members: [
-      {
-        katakana: "セラフィム",
-        name: "Serafim",
-      },
-      {
-        katakana: "ムフリー",
-        name: "Muflih",
-      },
-      {
-        katakana: "ラジェンヅラ",
-        name: "Rajendra",
-      },
-      {
-        katakana: "リフキ",
-        name: "Rifqi",
-      },
-      { katakana: "シチ", name: "Siti" },
-      { katakana: "ナウファル", name: "Naufal" },
-      { katakana: "フィクリ", name: "Fiqri" },
-      { katakana: "アルフィー", name: "Alfy" },
-      { katakana: "エズラ", name: "Ezra" },
-    ],
-    katakanaMax: 6,
-  },
-];
+import { generations } from "@/assets/pengurus";
 ---
 
 <Default
@@ -51,34 +14,30 @@ const generations: TGen[] = [
   ogUrl="keanggotaan"
 >
   <Modal />
-  
+
   <main class="pt-24 flex flex-col gap-7">
     <section class="flex flex-col gap-3 items-center">
-      <h1 class="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
-        Susunan Badan Pengurus Harian (BPH)
+      <h1
+        class="text-center text-2xl font-bold w-[50%] sm:w-auto md:text-3xl lg:text-4xl"
+      >
+        Badan Pengurus Harian (BPH)
       </h1>
     </section>
 
     {
       generations.map((generation) => (
-        <section class="flex flex-col items-center gap-5">
+        <section class="flex flex-col items-center gap-10">
           <h1 class="text-center text-lg font-bold md:text-xl lg:text-2xl">
             {generation.title}
           </h1>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {generation.members.map((member) => (
-              <div class="bg-slate-100 dark:bg-stone-800 text-black w-[18em] h-[20em] flex flex-col justify-end">
-                <FireModalButton client:load />
-
-                <div class="flex flex-row">
-                  {Array.from({ length: generation.katakanaMax }).map((_, idx) => (
-                    <div class="h-10 border w-full flex dark:text-white items-center justify-center font-zenka font-semibold text-xl">
-                      {member.katakana.split("")[idx] ?? ""}
-                    </div>
-                  ))} 
-                </div>
-              </div>
+              <Member
+                client:load
+                katakanaMax={generation.katakanaMax}
+                memberData={member}
+              />
             ))}
           </div>
         </section>
