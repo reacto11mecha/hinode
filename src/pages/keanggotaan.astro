@@ -2,6 +2,8 @@
 import Default from "@/layouts/Default.astro";
 import Modal from "@/components/keanggotaan/Modal.astro";
 
+import { Image } from "astro:assets";
+
 import { Member } from "@/components/keanggotaan/Member";
 
 import { generations } from "@/assets/pengurus";
@@ -37,7 +39,14 @@ import { generations } from "@/assets/pengurus";
                 client:load
                 katakanaMax={generation.katakanaMax}
                 memberData={member}
-              />
+              >
+                <Image
+                  src={member.image}
+                  alt={`Gambar dari ${member.position} angkatan ${generation.title} | ${member.name} - ${member.katakana}`}
+                  width="200"
+                  height="150"
+                />
+              </Member>
             ))}
           </div>
         </section>
