@@ -55,7 +55,9 @@
         </div>
 
         <div class="flex items-center justify-center pb-10 sm:pb-0">
-          <div class="w-[18em] h-[27em] bg-slate-500"></div>
+          <div class="w-[18em] h-[27em]">
+            <img src="" />
+          </div>
         </div>
       </div>
     </div>
@@ -81,6 +83,10 @@
   function toggleModal() {
     const body = document.querySelector("body");
     const modal = document.querySelector(".modal");
+
+    if (document.body.classList.contains("modal-active")) {
+      modal.querySelector("img").src = "";
+    }
 
     modal.classList.toggle("opacity-0");
     modal.classList.toggle("pointer-events-none");
