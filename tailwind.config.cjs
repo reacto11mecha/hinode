@@ -18,5 +18,5 @@ module.exports = {
       play: ["Play", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

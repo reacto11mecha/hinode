@@ -9,7 +9,7 @@ export const Member = ({ katakanaMax, memberData, children }: {
       const toggle = (window as unknown as { toggleModal: () => void }).toggleModal;
 
       const imageEl = document.querySelector(".modal img")! as HTMLImageElement;
-      imageEl.src = memberData.image;
+      imageEl.src = memberData.imageModal;
 
       const normalName = document.querySelector(".modal #normal-name")!;
       normalName.textContent = memberData.name;
