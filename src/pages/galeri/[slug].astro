@@ -1,0 +1,54 @@
+---
+import { getCollection, getEntryBySlug } from "astro:content";
+
+import Default from "@/layouts/Default.astro";
+
+export async function getStaticPaths() {
+  const galeriEntries = await getCollection("galeri");
+
+  return await Promise.all(
+    galeriEntries.map(async (galeri) => {
+      const entry = await getEntryBySlug("galeri", galeri.slug);
+      const { Content } = await entry.render();
+
+      return {
+        params: { slug: galeri.slug },
+        props: {
+          slug: galeri.slug,
+          ...galeri.data,
+          Content,
+        },
+      };
+    }),
+  );
+}
+
+const { Content, title, description, slug } = Astro.props;
+---
+
+<Default
+  title={title}
+  description={description}
+  ogImage={`/ogs/og-${slug}.png`}
+>
+  <main class="pt-24 md:pt-28 px-10 flex justify-center">
+    <article
+      class="max-w-5xl prose dark:prose-invert
+        prose-headings:font-bold
+        prose-h5:font-bold prose-h6:font-bold
+        
+        prose-h1:text-3xl md:prose-h1:text-5xl
+        prose-h2:text-2xl md:prose-h2:text-4xl
+        prose-h3:text-xl md:prose-h3:text-3xl
+        prose-h4:text-lg md:prose-h4:text-2xl
+        prose-h5:text-base md:prose-h5:text-xl
+        prose-h6:text-sm md:prose-h6:text-lg
+        
+        text-base md:text-lg
+      
+        prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl"
+    >
+      <Content />
+    </article>
+  </main>
+</Default>

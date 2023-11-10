@@ -1,0 +1,46 @@
+---
+import "@fontsource/zen-kaku-gothic-new/500.css";
+
+import { getCollection, type CollectionEntry } from "astro:content";
+import { DateTime } from "luxon";
+
+import type { GetStaticPaths, Page } from "astro";
+
+import Default from "@/layouts/Default.astro";
+
+import Template from "@/components/galeri/Template.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const materiEntries = await getCollection("galeri");
+
+  const sorted = materiEntries.sort((a, b) =>
+    DateTime.fromFormat(b.data.created_at, "yyyy-M-d") >
+    DateTime.fromFormat(a.data.created_at, "yyyy-M-d")
+      ? 1
+      : -1,
+  );
+
+  return paginate(sorted, { pageSize: 15 });
+}) satisfies GetStaticPaths;
+
+export type Props = {
+  page: Page & { data: CollectionEntry<"galeri">[] };
+};
+
+const { page } = Astro.props;
+---
+
+<Default
+  title="Galeri | HINODE SMAN 12 Bekasi"
+  description="Halaman galeri hinode sman 12 bekasi"
+  ogImage="/og-page-galeri.png"
+  ogUrl="keanggotaan"
+>
+  <Template
+    data={page.data}
+    currentPage="/"
+    currentPageNumber={page.currentPage}
+    nextPage={page.url.next}
+    prevPage={page.url.prev}
+  />
+</Default>

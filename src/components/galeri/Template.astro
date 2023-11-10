@@ -1,0 +1,85 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+export interface Props {
+  nextPage: string | undefined;
+  prevPage: string | undefined;
+  currentPage: string;
+  currentPageNumber: number;
+  data: CollectionEntry<"galeri">[];
+}
+
+const { data, currentPageNumber, nextPage, prevPage } = Astro.props;
+---
+
+<main class="pt-24 flex flex-col gap-7">
+  <section class="flex flex-col gap-3 items-center">
+    <h1 class="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
+      Galeri Hinode
+    </h1>
+
+    <p class="text-center w-[85%] sm:w-[70%] md:w-full text-lg lg:text-xl">
+      Halaman ini berisi kegiatan maupun gambar <i>komuk</i> yang disimpan
+      sebagai arsip.
+    </p>
+  </section>
+
+  <section
+    class="px-4 pb-5 sm:px-6 md:px-8 lg:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+  >
+    {
+      data.map((galeri) => (
+        <div class="flex flex-col gap-5 rounded border dark:bg-neutral-800 dark:border-neutral-700 p-3">
+          <div class="rounded bg-gray-300 dark:bg-neutral-700">
+            <img
+              class="aspect-video"
+              src={`/ogs/og-${galeri.slug}.png`}
+              alt={`Gambar thumbnail untuk "${galeri.data.title}"`}
+            />
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="font-bold text-xl">{galeri.data.title}</h3>
+            <p class="text-lg">{galeri.data.description}</p>
+            <small class="text-base font-zenka text-gray-600 dark:text-gray-400">
+              {galeri.data.created_at.replace("-", "年 ").replace("-", "月 ")}日
+            </small>
+          </div>
+          <a
+            class="text-sky-700 dark:text-sky-500"
+            href={`/galeri/${galeri.slug}`}
+          >
+            Lihat >>>
+          </a>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="flex justify-center items-center">
+    {
+      prevPage && (
+        <a
+          href={prevPage}
+          class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center"
+        >
+          <p class="text-lg font-bold">&lt;</p>
+        </a>
+      )
+    }
+    <div
+      class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 flex items-center justify-center"
+    >
+      <p class="text-lg text-center font-bold">{currentPageNumber}</p>
+    </div>
+    {
+      nextPage && (
+        <a
+          href={nextPage}
+          class="p-4 border dark:bg-zinc-950 dark:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 dark:hover:border-zinc-50 flex items-center justify-center"
+        >
+          <p class="text-lg font-bold">&gt;</p>
+        </a>
+      )
+    }
+  </section>
+</main>

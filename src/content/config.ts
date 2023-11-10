@@ -9,12 +9,20 @@ const materiSchema = z.object({
   link: z.string().optional(),
 });
 
-const materiCollection = defineCollection({
-  schema: materiSchema,
+const galeriSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  created_at: z.string(),
 });
 
 export const collections = {
-  materi: materiCollection,
+  materi: defineCollection({
+    schema: materiSchema,
+  }),
+  galeri: defineCollection({
+    schema: galeriSchema,
+  }),
 };
 
 export type TMateri = z.infer<typeof materiSchema>;
+export type TGaleri = z.infer<typeof galeriSchema>;
