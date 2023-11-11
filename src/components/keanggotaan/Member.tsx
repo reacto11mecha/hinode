@@ -11,13 +11,13 @@ export const Member = ({
   memberData: IMember;
   children: React.ReactNode;
 }) => {
-  const btnRef = useRef(null!);
+  const btnRef = useRef<HTMLButtonElement>(null!);
 
   return (
     <button
       ref={btnRef}
       className="bg-slate-100 dark:bg-stone-800 text-black w-[18em] h-[23em] flex flex-col items-center justify-end"
-      onClick={(e) => {
+      onClick={() => {
         const toggle = (window as unknown as { toggleModal: () => void })
           .toggleModal;
 
