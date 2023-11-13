@@ -46,6 +46,14 @@ import { generations } from "@/assets/pengurus";
                   width="200"
                   height="150"
                 />
+
+                <Image
+                  src={member.imagePost}
+                  alt={`Gambar dari ${member.position} angkatan ${generation.title} | ${member.name} - ${member.katakana}`}
+                  width="300"
+                  height="250"
+                  class="hidden"
+                />
               </Member>
             ))}
           </div>
