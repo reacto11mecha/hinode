@@ -1,31 +1,21 @@
 // Angkatan 9-10
-const modalCeya = "/angkatan/9-10/ceya.png";
-const modalCeyaMuflih = "/angkatan/9-10/muflih.png";
-const modalCeyaRajendra = "/angkatan/9-10/rajendra.png";
-const modalCeyaAlfy = "/angkatan/9-10/alfy.png";
-const modalCeyaAzzam = "/angkatan/9-10/azzam.png";
-const modalCeyaEzra = "/angkatan/9-10/ezra.png";
-const modalCeyaFiqri = "/angkatan/9-10/fiqri.png";
-const modalCeyaRasya = "/angkatan/9-10/rasya.png";
-const modalCeyaJose = "/angkatan/9-10/jose.png";
-// const modalCeyaReivan = "/angkatan/9-10/reivan.png";
-const modalCeyaRhannia = "/angkatan/9-10/rhannia.png";
-const modalCeyaRihana = "/angkatan/9-10/rihana.png";
-const modalCeyaSiti = "/angkatan/9-10/siti.png";
-
 import imageCeya from "./angkatan/9-10/ceya.png";
 import imageCeyaAlfy from "./angkatan/9-10/alfy.png";
 import imageCeyaAzzam from "./angkatan/9-10/azzam.png";
+import imageCeyaNopal from "./angkatan/9-10/naufal.png";
+import imageCeyaRifqi from "./angkatan/9-10/rifqi.png";
 import imageCeyaEzra from "./angkatan/9-10/ezra.png";
 import imageCeyaFiqri from "./angkatan/9-10/fiqri.png";
 import imageCeyaJose from "./angkatan/9-10/jose.png";
 import imageCeyaMuflih from "./angkatan/9-10/muflih.png";
 import imageCeyaRajendra from "./angkatan/9-10/rajendra.png";
 import imageCeyaRasya from "./angkatan/9-10/rasya.png";
-// import imageCeyareivan from "./angkatan/9-10/reivan.png";
+import imageCeyaReivan from "./angkatan/9-10/reivan.png";
+import imageCeyaKenzi from "./angkatan/9-10/kenzi.png";
 import imageCeyaRhannia from "./angkatan/9-10/rhannia.png";
 import imageCeyaRihana from "./angkatan/9-10/rihana.png";
 import imageCeyaSiti from "./angkatan/9-10/siti.png";
+import imageCeyaPasya from "./angkatan/9-10/pasya.png";
 
 export interface IMember {
   name: string;
@@ -33,7 +23,6 @@ export interface IMember {
   position: string;
   message: string;
   imagePost: ImageMetadata;
-  imageModal: string;
 }
 
 type TGen = {
@@ -52,7 +41,6 @@ export const generations: TGen[] = [
         position: "Ketua Umum",
         message: "",
         imagePost: imageCeya,
-        imageModal: modalCeya,
       },
       {
         name: "Muflih",
@@ -60,7 +48,6 @@ export const generations: TGen[] = [
         position: "Wakil Ketua Umum",
         message: "",
         imagePost: imageCeyaMuflih,
-        imageModal: modalCeyaMuflih,
       },
       {
         name: "Rajendra",
@@ -68,37 +55,34 @@ export const generations: TGen[] = [
         position: "Sekretaris 1",
         message: "",
         imagePost: imageCeyaRajendra,
-        imageModal: modalCeyaRajendra,
       },
-      // {
-      //   name: "Rifqi",
-      //   katakana: "リフキ",
-      //   position: "Sekretaris 2",
-      //   message: "",
-      //   // image: modalRifqi,
-      // },
+      {
+        name: "Rifqi",
+        katakana: "リフキ",
+        position: "Sekretaris 2",
+        message: "",
+        imagePost: imageCeyaRifqi,
+      },
       {
         name: "Siti",
         katakana: "シチ",
         position: "Bendahara 1",
         message: "",
         imagePost: imageCeyaSiti,
-        imageModal: modalCeyaSiti,
       },
-      // {
-      //   name: "Naufal",
-      //   katakana: "ナウファル",
-      //   position: "Bendahara 2",
-      //   message: "",
-      //   // image: modalCeyaNopal,
-      // },
+      {
+        name: "Naufal",
+        katakana: "ナウファル",
+        position: "Bendahara 2",
+        message: "",
+        imagePost: imageCeyaNopal,
+      },
       {
         name: "Fiqri",
         katakana: "フィクリ",
         position: "Ketua Divisi Sejarah",
         message: "",
         imagePost: imageCeyaFiqri,
-        imageModal: modalCeyaFiqri,
       },
       {
         name: "Alfy",
@@ -106,7 +90,6 @@ export const generations: TGen[] = [
         position: "Ketua Divisi Budaya",
         message: "",
         imagePost: imageCeyaAlfy,
-        imageModal: modalCeyaAlfy,
       },
       {
         name: "Ezra",
@@ -114,7 +97,6 @@ export const generations: TGen[] = [
         position: "Ketua Divisi Bahasa",
         message: "Mantap!",
         imagePost: imageCeyaEzra,
-        imageModal: modalCeyaEzra,
       },
       {
         name: "Azzam",
@@ -122,7 +104,6 @@ export const generations: TGen[] = [
         position: "Anggota Divisi Bahasa",
         message: "",
         imagePost: imageCeyaAzzam,
-        imageModal: modalCeyaAzzam,
       },
       {
         name: "Rasya",
@@ -130,7 +111,6 @@ export const generations: TGen[] = [
         position: "Anggota Divisi Bahasa",
         message: "",
         imagePost: imageCeyaRasya,
-        imageModal: modalCeyaRasya,
       },
       {
         name: "Jose",
@@ -138,7 +118,6 @@ export const generations: TGen[] = [
         position: "Anggota Divisi Sejarah",
         message: "",
         imagePost: imageCeyaJose,
-        imageModal: modalCeyaJose,
       },
       {
         name: "Rihana",
@@ -146,7 +125,6 @@ export const generations: TGen[] = [
         position: "Anggota Divisi Budaya",
         message: "",
         imagePost: imageCeyaRihana,
-        imageModal: modalCeyaRihana,
       },
       {
         name: "Rhannia",
@@ -154,7 +132,27 @@ export const generations: TGen[] = [
         position: "Anggota Divisi Budaya",
         message: "",
         imagePost: imageCeyaRhannia,
-        imageModal: modalCeyaRhannia,
+      },
+      {
+        name: "Reivan",
+        katakana: "レイヴァン",
+        position: "Anggota Divisi Budaya",
+        message: "",
+        imagePost: imageCeyaReivan,
+      },
+      {
+        name: "Kenzi",
+        katakana: "ケンジ",
+        position: "Anggota Divisi Budaya",
+        message: "",
+        imagePost: imageCeyaKenzi,
+      },
+      {
+        name: "Pasya",
+        katakana: "パシア",
+        position: "Anggota Divisi Bahasa",
+        message: "",
+        imagePost: imageCeyaPasya,
       },
     ],
     katakanaMax: 6,
