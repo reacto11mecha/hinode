@@ -4,7 +4,7 @@ description: Dokumentasi buka puasa bersama bph Hinode di Infiniti Coffee pada 3
 created_at: "2024-04-03"
 ---
 
-## Agenda Kegiatan Buka Bersama Angkatan 10 dan 11
+## Agenda Kegiatan Buka Bersama Angkatan 9, 10, dan 11
 
 Agenda ini bernamakan 'Hinode no Iftaaruu' / 日の出のイッフタールー yang berlokasi di Infiniti Coffe.
 
