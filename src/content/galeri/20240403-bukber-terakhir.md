@@ -1,6 +1,6 @@
 ---
-title: Ini judul galerinya ygy
-description: Ini deskripsi.
+title: Buka Bersama BPH HINODE
+description: Dokumentasi buka puasa bersama bph Hinode di Infiniti Coffee pada 3 April 2023
 created_at: "2024-04-03"
 ---
 
