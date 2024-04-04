@@ -67,8 +67,10 @@ export const thumbnailIntegration = (
           ).data as TMateri,
 
           // For easy path split
-          path: `/${galeriPath}`,
+          path: `/${galeriPath.replace(".md", "")}`,
         }));
+
+        console.log(galleryData);
 
         // Filter all pages that don't have any internal lessons, or any gallery images
         const filteredPages = pages
