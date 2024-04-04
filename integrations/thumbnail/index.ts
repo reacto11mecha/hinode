@@ -52,14 +52,36 @@ export const thumbnailIntegration = (
           (lesson) => !lesson.data.isExternal,
         );
 
-        // Filter all pages that don't have any internal lessons
-        const filteredPages = pages.filter(
-          (d) =>
-            !filterNonExternal.find((ext) => d.pathname.endsWith(ext.path)),
-        );
+        // List all gallery
+        const galleryList = await globby(["./**/*.md"], {
+          cwd: path.join(rootProject, "src/content/galeri"),
+        });
+
+        // Extract gallery yaml
+        const galleryData = galleryList.map((galeriPath) => ({
+          data: matter(
+            fs.readFileSync(
+              path.join(rootProject, "src/content/galeri", galeriPath),
+              "utf8",
+            ),
+          ).data as TMateri,
+
+          // For easy path split
+          path: `/${galeriPath}`,
+        }));
+
+        // Filter all pages that don't have any internal lessons, or any gallery images
+        const filteredPages = pages
+          .filter(
+            (d) =>
+              !filterNonExternal.find((ext) => d.pathname.endsWith(ext.path)),
+          )
+          .filter(
+            (d) => !galleryData.find((ext) => d.pathname.endsWith(ext.path)),
+          );
 
         const OGs = [
-          ...lessonsData.map((lesson) => {
+          ...[...lessonsData, ...galleryData].map((lesson) => {
             const pathSplitted = lesson.path.split("/");
 
             return {
