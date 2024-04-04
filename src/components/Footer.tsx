@@ -1,4 +1,4 @@
-import { SlSocialInstagram } from "react-icons/sl/index";
+import { SlSocialInstagram } from "react-icons/sl";
 
 export const Footer = () => (
   <footer className="mt-20 p-7 bg-neutral-50 border dark:border-neutral-900 dark:bg-neutral-950">

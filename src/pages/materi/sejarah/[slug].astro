@@ -3,21 +3,24 @@ import { getCollection, getEntryBySlug } from "astro:content";
 
 export async function getStaticPaths() {
   const materiEntries = await getCollection("materi", ({ id }) =>
-    id.startsWith("sejarah/")
+    id.startsWith("sejarah/"),
   );
 
   return await Promise.all(
-    materiEntries.filter(entry => entry.slug.startsWith("sejarah/")).filter(entry => !entry.data.isExternal).map(async (materi) => {
-      const entry = await getEntryBySlug("materi", materi.slug);
-      const { Content } = await entry.render();
+    materiEntries
+      .filter((entry) => entry.slug.startsWith("sejarah/"))
+      .filter((entry) => !entry.data.isExternal)
+      .map(async (materi) => {
+        const entry = await getEntryBySlug("materi", materi.slug);
+        const { Content } = await entry.render();
 
-      return {
-        params: { slug: materi.slug.replace("sejarah/", "") },
-        props: {
-          Content,
-        },
-      };
-    })
+        return {
+          params: { slug: materi.slug.replace("sejarah/", "") },
+          props: {
+            Content,
+          },
+        };
+      }),
   );
 }
 

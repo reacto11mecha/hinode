@@ -7,14 +7,14 @@ import revealBlack from "reveal.js/dist/theme/black.css?inline";
 
 const { title, description, file } = Astro.props.frontmatter;
 
-const ogImage = `${file.split('/').at(-1).replace(".md", "")}.png`;
+const ogImage = `${file.split("/").at(-1).replace(".md", "")}.png`;
 const ogUrl = file.split("/").slice(-3).join("/").replace(".md", "");
 
 const unparsedFile = fs.readFileSync(file, "utf8");
 const { content } = matter(unparsedFile);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -24,15 +24,14 @@ const { content } = matter(unparsedFile);
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={`${Astro.site}ogs/${ogImage}`} />
     <meta property="og:url" content={`${Astro.site}${ogUrl}`} />
 
-    <style set:html={reveal} />
-    <style set:html={revealBlack} />
+    <style set:html={reveal}></style>
+    <style set:html={revealBlack}></style>
 
     <title>{title}</title>
   </head>

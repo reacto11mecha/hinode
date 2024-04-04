@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsSunFill, BsMoon } from "react-icons/bs/index";
+import { BsSunFill, BsMoon } from "react-icons/bs";
 
 export const Navbar = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setDarkMode] = useState(false);

@@ -28,28 +28,35 @@ const { title, description, ogImage, ogUrl } = Astro.props;
 
     <meta name="description" content={description} />
 
-    {ogImage && (
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${Astro.site}ogs${ogImage}`} />
-      <meta property="og:url" content={`${Astro.site}${!ogUrl ? "" : ogUrl}`} />
-    )}
+    {
+      ogImage && (
+        <>
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content={`${Astro.site}ogs${ogImage}`} />
+          <meta
+            property="og:url"
+            content={`${Astro.site}${!ogUrl ? "" : ogUrl}`}
+          />
+        </>
+      )
+    }
 
     <script is:inline>
-    const setDarkMode = () => {
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    };
+      const setDarkMode = () => {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      };
 
-    setDarkMode();
+      setDarkMode();
     </script>
 
     <title>{title}</title>
